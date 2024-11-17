@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Portal - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #5cb5f1, #2e8b57);
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Container Styling */
+        .login-container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .login-container h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* Form and Input Styling */
+        #loginForm {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #loginForm input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #f4f4f4;
+            color: #333;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #loginForm input:focus {
+            background-color: #e8f0fe;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+        }
+
+        #loginForm button {
+            padding: 10px;
+            font-size: 1rem;
+            background-color: #2e8b57;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #loginForm button:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Login Message Styling */
+        #loginMessage {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ff7f7f;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 15px;
+            }
+
+            .login-container h1 {
+                font-size: 1.5rem;
+            }
+
+            #loginForm input, #loginForm button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to Healthcare Portal</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Enter Username" required>
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMessage"></p>
+    </div>
+    <script>
+        // JavaScript to handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === "admin" && password === "admin") {
+                document.getElementById('loginMessage').textContent = "Login successful!";
+                document.getElementById('loginMessage').style.color = "#7cff7c";
+            } else {
+                document.getElementById('loginMessage').textContent = "Invalid username or password.";
+            }
+        });
+    </script>
+</body>
+</html>
