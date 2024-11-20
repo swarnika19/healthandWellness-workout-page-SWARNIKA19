@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise and Workout Portal</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #48c6ef, #6f86d6);
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .workout-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .workout-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+        }
+
+        .workout-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .workout-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .workout-item h2 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: #f5f5f5;
+        }
+
+        .workout-item button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #2e8b57;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .workout-item button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="workout-container">
+        <div class="workout-item" onclick="navigateToAgePage()">
+            <img src="yoga.jpg" alt="Yoga">
+            <h2>Yoga</h2>
+            <button>Explore Yoga</button>
+        </div>
+        <div class="workout-item" onclick="navigateToAgePage()">
+            <img src="cardio.jpg" alt="Cardio">
+            <h2>Cardio Workouts</h2>
+            <button>Explore Cardio</button>
+        </div>
+        <div class="workout-item" onclick="navigateToAgePage()">
+            <img src="strength.jpg" alt="Strength Training">
+            <h2>Strength Training</h2>
+            <button>Explore Strength</button>
+        </div>
+    </div>
+    <script>
+        function navigateToAgePage() {
+            window.location.href = "age-filters.html";
+        }
+    </script>
+</body>
+</html>

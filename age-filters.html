@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age-Based Exercise Recommendations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        select, button {
+            font-size: 1rem;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        select {
+            width: 300px;
+        }
+
+        button {
+            background-color: #2e8b57;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .recommendations {
+            margin-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .recommendation-card {
+            background: #fff;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            max-width: 400px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .recommendation-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .recommendation-card h2 {
+            margin: 10px 0;
+        }
+
+        .recommendation-card p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Age Range</h1>
+    <select id="ageRange">
+        <option value="">--Select Age Range--</option>
+        <option value="teens">Teenagers (13-19)</option>
+        <option value="adults">Adults (20-40)</option>
+        <option value="seniors">Seniors (40+)</option>
+    </select>
+    <button onclick="showRecommendations()">Get Recommendations</button>
+    <div class="recommendations" id="recommendations"></div>
+
+    <script>
+        function showRecommendations() {
+            const ageRange = document.getElementById('ageRange').value;
+            const recommendationsDiv = document.getElementById('recommendations');
+            recommendationsDiv.innerHTML = ''; // Clear previous content
+
+            if (ageRange === 'teens') {
+                recommendationsDiv.innerHTML = `
+                    <div class="recommendation-card">
+                        <img src="teen-yoga.jpg" alt="Yoga for Teens">
+                        <h2>Yoga for Teens</h2>
+                        <p>Advantages: Improves flexibility, reduces stress.</p>
+                        <p>Foods: Fresh fruits, nuts, and whole grains.</p>
+                    </div>
+                `;
+            } else if (ageRange === 'adults') {
+                recommendationsDiv.innerHTML = `
+                    <div class="recommendation-card">
+                        <img src="adult-cardio.jpg" alt="Cardio for Adults">
+                        <h2>Cardio for Adults</h2>
+                        <p>Advantages: Boosts heart health, burns calories.</p>
+                        <p>Foods: Lean protein, vegetables, and complex carbs.</p>
+                    </div>
+                `;
+            } else if (ageRange === 'seniors') {
+                recommendationsDiv.innerHTML = `
+                    <div class="recommendation-card">
+                        <img src="senior-strength.jpg" alt="Strength Training for Seniors">
+                        <h2>Strength Training for Seniors</h2>
+                        <p>Advantages: Maintains muscle mass, improves bone density.</p>
+                        <p>Foods: Dairy products, fatty fish, and green vegetables.</p>
+                    </div>
+                `;
+            } else {
+                alert('Please select an age range.');
+            }
+        }
+    </script>
+</body>
+</html>
